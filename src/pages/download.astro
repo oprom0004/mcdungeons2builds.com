@@ -1,0 +1,297 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = 'Minecraft Dungeons 2 Download Guide – Steam, PC Game Pass, PS5 & Switch (Official)';
+const pageDescription = 'Find official download links and storefronts for Minecraft Dungeons 2 on PC (Steam & Game Pass), PlayStation 5, and Nintendo Switch. Compare Standard vs Deluxe editions and PC specs.';
+
+const platforms = [
+  {
+    name: 'Steam (PC)',
+    store: 'Valve Steam Store',
+    badge: 'Verified on PC & Steam Deck',
+    price: '$39.99',
+    icon: '🎮',
+    officialUrl: 'https://store.steampowered.com/',
+    highlights: [
+      'Native Steam Achievements & Cloud Save support',
+      'Verified performance on Steam Deck at 60 FPS',
+      'Steam Community Hub & Guides integration',
+    ],
+    ctaText: 'View on Steam Store',
+  },
+  {
+    name: 'PC Game Pass & Xbox',
+    store: 'Microsoft Store / Xbox App',
+    badge: 'Included in Subscription',
+    price: 'Included / $39.99',
+    icon: '🟢',
+    officialUrl: 'https://www.xbox.com/games/store/pc-game-pass',
+    highlights: [
+      'Day One availability on PC Game Pass & Xbox Game Pass Ultimate',
+      'Seamless Xbox Play Anywhere cross-progression between PC and Xbox Series X/S',
+      'Cloud Gaming support on supported mobile devices and browsers',
+    ],
+    ctaText: 'Play on PC Game Pass',
+  },
+  {
+    name: 'PlayStation 5',
+    store: 'PlayStation Store',
+    badge: 'Console Edition',
+    price: '$39.99',
+    icon: '🟦',
+    officialUrl: 'https://store.playstation.com/',
+    highlights: [
+      'DualSense adaptive triggers and haptic feedback support',
+      'Target 4K 60 FPS performance mode on PS5',
+      '4-Player couch co-op + online cross-play',
+    ],
+    ctaText: 'View on PS Store',
+  },
+  {
+    name: 'Nintendo Switch & Switch 2',
+    store: 'Nintendo eShop',
+    badge: 'Portable Edition',
+    price: '$39.99',
+    icon: '🔴',
+    officialUrl: 'https://www.nintendo.com/store/',
+    highlights: [
+      'Enhanced performance presets on Nintendo Switch 2',
+      'Drop-in/drop-out wireless local multiplayer with 4 Joy-Cons',
+      'Full cross-play compatibility via free Microsoft Account login',
+    ],
+    ctaText: 'View on eShop',
+  },
+];
+
+const downloadFaqs = [
+  {
+    q: 'Does Minecraft Dungeons 2 support cross-play between Steam, Xbox, and PlayStation?',
+    a: 'Yes! Minecraft Dungeons 2 features full 4-player cross-platform play across PC (Steam and Windows Store), Xbox Series X/S, PlayStation 5, and Nintendo Switch. Players simply link a free Microsoft Account to invite friends regardless of platform.',
+  },
+  {
+    q: 'What is the download size for Minecraft Dungeons 2 on PC?',
+    a: 'The initial launch install footprint requires approximately 38 GB of free storage space. An NVMe SSD (M.2) is strongly recommended over a mechanical HDD to ensure seamless streaming of the new open-world Overworld and The Sift dimension.',
+  },
+  {
+    q: 'What extra content is included in the Deluxe Edition?',
+    a: 'The Deluxe Edition ($49.99) includes the base game, four exclusive Hero Skins, the Soul Cape cosmetic, the Blub companion pet, and prepaid Season Pass access to both upcoming DLC expansions: DLC 1 (releasing Q4 2026) and DLC 2 (releasing Q1 2027).',
+  },
+  {
+    q: 'Can I transfer my save files between Steam and the Xbox / Game Pass version?',
+    a: 'Character hero saves are cloud-synchronized via your connected Microsoft Account, allowing you to access your heroes, unlocked talismans, and inventory seamlessly across PC Game Pass, Steam, and console editions.',
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumbs -->
+    <nav class="font-mono text-xs text-mc-muted mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-mc-emerald">Official Download &amp; Storefronts</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-mc-card via-mc-darkest to-mc-card border border-mc-border p-8 sm:p-12 mb-12 shadow-xl">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mc-emerald/15 border border-mc-emerald/30 text-mc-emerald text-xs font-mono font-bold tracking-widest uppercase">
+          <span>Official Distribution Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight uppercase">
+          Download <span class="text-transparent bg-clip-text bg-gradient-to-r from-mc-emerald via-teal-300 to-mc-soul">Minecraft Dungeons 2</span>
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
+          Released on September 29, 2026. Find official authorized digital download storefronts, subscription availability, edition comparisons, and PC hardware specifications below:
+        </p>
+      </div>
+    </div>
+
+    <!-- Authorized Platforms Grid -->
+    <div class="space-y-6 mb-16">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-mc-emerald font-bold block mb-1">Official Channels</span>
+          <h2 class="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight uppercase">
+            Choose Your Platform
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {platforms.map((p) => (
+          <div class="rounded-3xl bg-mc-card/90 border border-mc-border p-6 sm:p-8 hover:border-mc-emerald/50 transition-all flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-mc-darkest border border-mc-border text-mc-emerald">
+                  {p.badge}
+                </span>
+                <span class="font-mono font-bold text-white text-sm">{p.price}</span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="text-3xl">{p.icon}</span>
+                <div>
+                  <h3 class="font-mono font-bold text-xl text-white">{p.name}</h3>
+                  <span class="text-xs text-mc-muted font-sans">{p.store}</span>
+                </div>
+              </div>
+
+              <ul class="space-y-2 text-xs text-slate-300 font-sans border-t border-mc-border/60 pt-4">
+                {p.highlights.map((h) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-mc-emerald">✓</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Outbound Authority Link -->
+            <div class="pt-2">
+              <a
+                href={p.officialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-mc-emerald to-teal-500 text-black font-mono font-bold text-xs uppercase tracking-wider text-center block shadow-glow-emerald hover:brightness-110 transition-all"
+              >
+                <span>{p.ctaText}</span>
+                <span class="ml-1">↗</span>
+              </a>
+              <span class="block text-center text-[10px] text-mc-muted font-mono mt-1.5">
+                Official Authorized Storefront Link
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Standard vs Deluxe Edition Comparison -->
+    <div class="rounded-3xl bg-mc-card border border-mc-border p-6 sm:p-10 mb-16 space-y-8">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-mc-gold font-bold block mb-1">Buyer's Guide</span>
+        <h2 class="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight uppercase">
+          Standard vs Deluxe Edition
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm font-sans mt-1">
+          Review what is included in each digital edition before completing your purchase:
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left font-mono text-xs">
+          <thead class="bg-mc-darkest border-b border-mc-border text-mc-muted uppercase text-[10px]">
+            <tr>
+              <th class="p-4">Package Content</th>
+              <th class="p-4 text-center">Standard Edition ($39.99)</th>
+              <th class="p-4 text-center text-mc-gold">Deluxe Edition ($49.99)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-mc-border/60 text-slate-300">
+            <tr>
+              <td class="p-4 font-bold text-white">Full Minecraft Dungeons 2 Base Game</td>
+              <td class="p-4 text-center text-mc-emerald">✓ Included</td>
+              <td class="p-4 text-center text-mc-emerald">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="p-4">Access to The Sift Dimension (Endgame)</td>
+              <td class="p-4 text-center text-mc-emerald">✓ Included</td>
+              <td class="p-4 text-center text-mc-emerald">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="p-4">4 Exclusive Hero Skins</td>
+              <td class="p-4 text-center text-stone-600">—</td>
+              <td class="p-4 text-center text-mc-gold font-bold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="p-4">Soul Cape &amp; Blub Companion Pet</td>
+              <td class="p-4 text-center text-stone-600">—</td>
+              <td class="p-4 text-center text-mc-gold font-bold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="p-4">DLC Expansion 1 (Q4 2026)</td>
+              <td class="p-4 text-center text-stone-600">Requires Separate Purchase</td>
+              <td class="p-4 text-center text-mc-gold font-bold">✓ Included in Pass</td>
+            </tr>
+            <tr>
+              <td class="p-4">DLC Expansion 2 (Q1 2027)</td>
+              <td class="p-4 text-center text-stone-600">Requires Separate Purchase</td>
+              <td class="p-4 text-center text-mc-gold font-bold">✓ Included in Pass</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PC Hardware Requirements Table -->
+    <div class="rounded-3xl bg-mc-card border border-mc-border p-6 sm:p-10 mb-16 space-y-6">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-mc-soul font-bold block mb-1">Hardware Optimization</span>
+        <h2 class="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight uppercase">
+          PC System Requirements
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm font-sans mt-1">
+          Ensure your PC meets the specifications for smooth 60 FPS dungeon crawling:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-xs">
+        
+        <!-- Minimum Requirements -->
+        <div class="p-5 rounded-2xl bg-mc-darkest/80 border border-mc-border space-y-3">
+          <div class="flex items-center justify-between border-b border-mc-border pb-2">
+            <strong class="text-white uppercase font-bold">Minimum Specifications (1080p 30 FPS)</strong>
+            <span class="text-mc-muted text-[10px]">Low / Mid</span>
+          </div>
+          <div class="space-y-2 text-[11px]">
+            <p><strong class="text-slate-400">OS:</strong> Windows 10 (64-bit)</p>
+            <p><strong class="text-slate-400">Processor:</strong> Intel Core i5-6600K / AMD Ryzen 5 1600</p>
+            <p><strong class="text-slate-400">Memory:</strong> 8 GB RAM</p>
+            <p><strong class="text-slate-400">Graphics:</strong> NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 580</p>
+            <p><strong class="text-slate-400">DirectX:</strong> Version 12</p>
+            <p><strong class="text-slate-400">Storage:</strong> 40 GB available space (SSD recommended)</p>
+          </div>
+        </div>
+
+        <!-- Recommended Requirements -->
+        <div class="p-5 rounded-2xl bg-mc-darkest/80 border border-mc-emerald/40 space-y-3 shadow-glow-emerald">
+          <div class="flex items-center justify-between border-b border-mc-border pb-2">
+            <strong class="text-white uppercase font-bold text-mc-emerald">Recommended Specifications (1080p/1440p 60+ FPS)</strong>
+            <span class="text-mc-emerald text-[10px] font-bold">High / Ultra</span>
+          </div>
+          <div class="space-y-2 text-[11px]">
+            <p><strong class="text-slate-400">OS:</strong> Windows 11 (64-bit)</p>
+            <p><strong class="text-slate-400">Processor:</strong> Intel Core i7-10700K / AMD Ryzen 7 5800X</p>
+            <p><strong class="text-slate-400">Memory:</strong> 16 GB RAM</p>
+            <p><strong class="text-slate-400">Graphics:</strong> NVIDIA GeForce RTX 3060 / AMD Radeon RX 6700 XT</p>
+            <p><strong class="text-slate-400">DirectX:</strong> Version 12 (Ultimate)</p>
+            <p><strong class="text-slate-400">Storage:</strong> 40 GB available space (PCIe NVMe M.2 SSD)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Download FAQs -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-black font-mono text-white uppercase tracking-tight mb-6">
+        Installation &amp; Storefront FAQs
+      </h2>
+
+      {downloadFaqs.map((faq) => (
+        <details class="group rounded-2xl bg-mc-card/80 border border-mc-border p-5 transition-all open:border-mc-emerald/50">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-mono font-bold text-white text-sm">
+            <span>{faq.q}</span>
+            <span class="ml-4 text-mc-emerald text-xl group-open:rotate-45 transition-transform duration-200">+</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-mc-border/60 text-slate-300 text-xs sm:text-sm font-sans leading-relaxed">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</Layout>
