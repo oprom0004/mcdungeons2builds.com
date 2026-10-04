@@ -1,0 +1,2 @@
+# Ensure sitemap.xml works directly for Google Search Console and crawlers
+/sitemap.xml /sitemap-0.xml 200

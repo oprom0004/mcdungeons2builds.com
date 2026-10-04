@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://mcdungeons2builds.com/sitemap.xml
 Sitemap: https://mcdungeons2builds.com/sitemap-index.xml
