@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BuildCard from '../components/BuildCard.astro';
+import { BUILDS_DATABASE } from '../data/builds';
+
+const pageTitle = 'All Minecraft Dungeons 2 Builds – Filter by Playstyle & Level (2026)';
+const pageDescription = 'Browse the complete index of Minecraft Dungeons 2 character builds. Filter by Endgame Sift, Soul Magic, Melee DPS, Ranged mobility, Pet summoner, and Tank archetypes.';
+
+const archetypes = [
+  { name: 'All Builds', filter: 'all' },
+  { name: 'Endgame Sift', filter: 'sift' },
+  { name: 'Soul Magic', filter: 'soul' },
+  { name: 'Melee DPS', filter: 'melee' },
+  { name: 'Ranged Mobility', filter: 'ranged' },
+  { name: 'Pet Summoner', filter: 'pet' },
+  { name: 'Tank', filter: 'tank' },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumbs -->
+    <nav class="font-mono text-xs text-mc-muted mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-mc-emerald">Builds Database</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="max-w-3xl mb-10 space-y-3">
+      <h1 class="text-3xl sm:text-5xl font-black font-mono text-white tracking-tight uppercase">
+        Character Builds Database
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
+        Select a verified community loadout tailored to your favorite playstyle. Each build includes weapon combinations, recommended 4-piece armor sets, artifact rotations, and talent point priorities.
+      </p>
+    </div>
+
+    <!-- Quick Navigation Pills -->
+    <div class="flex flex-wrap items-center gap-2 pb-8 mb-8 border-b border-mc-border/80">
+      <span class="text-xs font-mono uppercase text-mc-muted mr-2">Jump to Archetype:</span>
+      {BUILDS_DATABASE.map((b) => (
+        <a
+          href={`#${b.id}`}
+          class="px-3 py-1.5 rounded-lg bg-mc-card border border-mc-border text-xs font-mono text-slate-300 hover:text-white hover:border-mc-emerald transition-all"
+        >
+          {b.title} ({b.tier})
+        </a>
+      ))}
+    </div>
+
+    <!-- Builds List Stack -->
+    <div class="space-y-10">
+      {BUILDS_DATABASE.map((build) => (
+        <BuildCard build={build} />
+      ))}
+    </div>
+
+    <!-- Bottom Help Section -->
+    <div class="mt-16 p-8 rounded-2xl bg-mc-card/60 border border-mc-border text-center space-y-3 max-w-2xl mx-auto">
+      <h3 class="text-xl font-mono font-bold text-white uppercase">Looking for Specific Weapon Rankings?</h3>
+      <p class="text-slate-400 text-xs font-sans">
+        Check out which individual axes, bows, and armors hold the highest statistical win rate in our tier list.
+      </p>
+      <div class="pt-2">
+        <a
+          href="/weapons-tier-list/"
+          class="inline-block px-5 py-2.5 rounded-xl bg-mc-emerald text-black font-mono font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all"
+        >
+          Explore Complete Tier List →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</Layout>

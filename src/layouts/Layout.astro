@@ -1,0 +1,175 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: Record<string, any> | Array<Record<string, any>>;
+}
+
+const { title, description, canonical, schema } = Astro.props;
+const canonicalURL = canonical || new URL(Astro.url.pathname, 'https://mcdungeons2builds.com').href;
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { name: '🔥 Top Builds', href: '/builds/' },
+  { name: '🌌 The Sift Endgame', href: '/the-sift/' },
+  { name: '⚔️ Tier List', href: '/weapons-tier-list/' },
+  { name: '💎 Talismans Guide', href: '/talismans/' },
+];
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth bg-mc-darkest text-slate-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://mcdungeons2builds.com/images/og-preview.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://mcdungeons2builds.com/images/og-preview.jpg" />
+
+    <!-- Structured Data (JSON-LD) -->
+    {schema && (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={JSON.stringify(Array.isArray(schema) ? schema : [schema])}
+      />
+    )}
+  </head>
+  <body class="min-h-screen flex flex-col font-sans selection:bg-mc-emerald selection:text-black">
+    
+    <!-- Top Meta Alert Banner -->
+    <div class="bg-gradient-to-r from-mc-sift/30 via-mc-soul/30 to-mc-emerald/30 border-b border-mc-border text-[11px] sm:text-xs py-1.5 px-4 text-center text-slate-300 font-mono">
+      <span class="inline-block px-1.5 py-0.5 rounded bg-mc-emerald/20 text-mc-emerald font-bold mr-2">RELEASE UPDATE</span>
+      Updated for <strong>Minecraft Dungeons 2 (September 29, 2026 Release)</strong> • Covering 4-Piece Armor Sets &amp; The Sift Dimension
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-mc-darkest/90 border-b border-mc-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mc-emerald to-mc-soul flex items-center justify-center text-xl shadow-glow-emerald group-hover:scale-105 transition-transform">
+            ⚔️
+          </div>
+          <div>
+            <span class="font-mono font-black text-lg sm:text-xl tracking-tight text-white flex items-center gap-1.5">
+              MCD2<span class="text-mc-emerald">BUILDS</span>
+            </span>
+            <span class="hidden sm:block text-[10px] font-mono text-mc-muted tracking-wider uppercase">
+              Minecraft Dungeons 2 Meta Database
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2 font-mono text-xs uppercase tracking-wider font-semibold">
+          {navLinks.map((link) => {
+            const isActive = currentPath === link.href;
+            return (
+              <a
+                href={link.href}
+                class={`px-3 py-2 rounded-lg transition-all ${
+                  isActive
+                    ? 'bg-mc-card text-mc-emerald border border-mc-emerald/40 shadow-sm'
+                    : 'text-slate-300 hover:text-white hover:bg-mc-card/60'
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
+        </nav>
+
+        <!-- Right Quick Action -->
+        <div class="flex items-center gap-2">
+          <a
+            href="/builds/"
+            class="px-4 py-2 rounded-lg bg-gradient-to-r from-mc-emerald to-teal-500 text-black font-mono font-bold text-xs uppercase tracking-wider shadow-glow-emerald hover:brightness-110 transition-all flex items-center gap-1.5"
+          >
+            <span>Explore Builds</span>
+            <span>⚡</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="border-t border-mc-border bg-mc-dark/90 mt-20 font-sans text-xs text-mc-muted">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+          
+          <div class="space-y-3 md:col-span-1">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">⚔️</span>
+              <span class="font-mono font-black text-white text-base">MCD2 Builds</span>
+            </div>
+            <p class="leading-relaxed">
+              The premier community database and character loadout guide for Minecraft Dungeons 2. Discover S-tier combinations, 4-piece armor synergies, and corrupted rift strategies.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-mono font-bold text-white text-xs uppercase tracking-wider mb-3">Popular Archetypes</h4>
+            <ul class="space-y-2">
+              <li><a href="/builds/#sift-void-cleaver" class="hover:text-mc-emerald transition-colors">Sift Void Cleaver (S+)</a></li>
+              <li><a href="/builds/#soul-harvester-infinite" class="hover:text-mc-emerald transition-colors">Infinite Soul Harvester (S+)</a></li>
+              <li><a href="/builds/#whirlwind-berserker" class="hover:text-mc-emerald transition-colors">Critical Whirlwind Berserker (S)</a></li>
+              <li><a href="/builds/#beastmaster-summoner" class="hover:text-mc-emerald transition-colors">Beastmaster Zoo Commander (A)</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-mono font-bold text-white text-xs uppercase tracking-wider mb-3">Mechanics & Guides</h4>
+            <ul class="space-y-2">
+              <li><a href="/the-sift/" class="hover:text-mc-emerald transition-colors">The Sift Dimension Walkthrough</a></li>
+              <li><a href="/weapons-tier-list/" class="hover:text-mc-emerald transition-colors">Complete Weapons Tier List</a></li>
+              <li><a href="/talismans/" class="hover:text-mc-emerald transition-colors">Talismans & Passive Perks</a></li>
+              <li><a href="/#faq" class="hover:text-mc-emerald transition-colors">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-mono font-bold text-white text-xs uppercase tracking-wider mb-3">Meta Roadmap</h4>
+            <p class="leading-relaxed mb-3">
+              DLC 1 (October–December 2026) and DLC 2 (early 2027) build updates will be posted immediately upon patch drop.
+            </p>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-mc-card border border-mc-border text-[11px] font-mono text-mc-emerald">
+              <span class="w-1.5 h-1.5 rounded-full bg-mc-emerald animate-pulse"></span>
+              Live Database v2.1.0
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-mc-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+          <p>© 2026 MCD2Builds.com • Independent Community Gaming Resource.</p>
+          <p class="text-slate-400 text-center sm:text-right max-w-xl">
+            Disclaimer: mcdungeons2builds.com is an unofficial fan resource. Minecraft and Minecraft Dungeons are registered trademarks of Mojang Studios and Microsoft Corporation.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

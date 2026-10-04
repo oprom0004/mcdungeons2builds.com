@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { TIER_LIST_ITEMS } from '../data/tierList';
+
+const pageTitle = 'Minecraft Dungeons 2 Weapons Tier List – Best Melee, Ranged & Armor Ranked (2026)';
+const pageDescription = 'Check out the official community Tier List for Minecraft Dungeons 2 equipment. See rankings from S+ to B tier for Unique Greatswords, Bows, 4-piece armor sets, and Talismans.';
+
+const tiers = ['S+', 'S', 'A'];
+
+const tierColors: Record<string, string> = {
+  'S+': 'text-purple-400 border-purple-500/40 bg-purple-500/10 shadow-glow-sift',
+  'S': 'text-amber-400 border-amber-500/40 bg-amber-500/10 shadow-glow-gold',
+  'A': 'text-cyan-400 border-cyan-500/40 bg-cyan-500/10 shadow-glow-soul',
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumbs -->
+    <nav class="font-mono text-xs text-mc-muted mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-mc-gold">Weapons &amp; Armor Tier List</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="max-w-3xl mb-12 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mc-gold/10 border border-mc-gold/40 text-mc-gold text-xs font-mono font-bold tracking-wider uppercase">
+        <span>Patch 1.0.2 Meta Ranking</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black font-mono text-white tracking-tight uppercase">
+        Weapons &amp; Gear Tier List
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
+        Ranked based on base DPS output, enchantment synergy, mob clearing speed, and performance in high-difficulty Sift rift runs.
+      </p>
+    </div>
+
+    <!-- Tier Stack -->
+    <div class="space-y-12">
+      {tiers.map((tierName) => {
+        const itemsInTier = TIER_LIST_ITEMS.filter((item) => item.tier === tierName);
+        if (itemsInTier.length === 0) return null;
+
+        return (
+          <section class="space-y-4">
+            <!-- Tier Header Badge -->
+            <div class="flex items-center gap-3">
+              <span class={`px-4 py-1.5 rounded-xl font-mono font-black text-sm uppercase tracking-wider border ${tierColors[tierName]}`}>
+                TIER {tierName} ({tierName === 'S+' ? 'Game-Breaking / Sift Meta' : tierName === 'S' ? 'Meta Defining' : 'High Tier'})
+              </span>
+              <div class="flex-grow h-px bg-mc-border"></div>
+            </div>
+
+            <!-- Items Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {itemsInTier.map((item) => (
+                <div class="rounded-2xl bg-mc-card/85 border border-mc-border p-5 hover:border-mc-emerald/40 transition-all flex flex-col justify-between">
+                  <div class="space-y-2.5">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-mc-darkest border border-mc-border text-mc-emerald">
+                        {item.category} • {item.type}
+                      </span>
+                      <span class="font-mono font-bold text-xs text-mc-gold">★ TOP PICK</span>
+                    </div>
+
+                    <h3 class="font-mono font-bold text-lg text-white tracking-tight">
+                      {item.name}
+                    </h3>
+
+                    <div class="p-2.5 rounded-lg bg-mc-darkest/70 border border-mc-border/80 text-xs font-mono">
+                      <span class="text-mc-muted text-[10px] block uppercase">Innate Perk</span>
+                      <span class="text-slate-200 font-semibold">{item.innatePerk}</span>
+                    </div>
+
+                    <p class="text-xs text-slate-300 font-sans leading-relaxed">
+                      {item.reason}
+                    </p>
+                  </div>
+
+                  <!-- Enchantments -->
+                  <div class="mt-4 pt-3 border-t border-mc-border/60">
+                    <span class="text-[10px] font-mono text-mc-muted block uppercase mb-1.5">
+                      Recommended Enchantments:
+                    </span>
+                    <div class="flex flex-wrap gap-1">
+                      {item.bestEnchantments.map((ench) => (
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-mc-border/50 text-slate-200 border border-mc-border">
+                          {ench}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+
+  </div>
+</Layout>

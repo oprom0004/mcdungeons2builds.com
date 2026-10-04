@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BuildCard from '../components/BuildCard.astro';
+import { BUILDS_DATABASE } from '../data/builds';
+
+const pageTitle = 'The Sift Dimension Guide – Portal Activation, Void Hazards & Best Builds (MCD2)';
+const pageDescription = 'Comprehensive walkthrough for The Sift in Minecraft Dungeons 2. Learn how to open Deep Dark portal frames, survive Void Miasma corruption, and defeat Corrupted Wardens.';
+
+const siftBuild = BUILDS_DATABASE.find((b) => b.id === 'sift-void-cleaver');
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumbs -->
+    <nav class="font-mono text-xs text-mc-muted mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-mc-sift">The Sift Dimension</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-mc-card via-mc-darkest to-mc-dark border border-mc-sift/40 p-8 sm:p-12 mb-12 shadow-glow-sift">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mc-sift/20 border border-mc-sift/50 text-mc-sift text-xs font-mono font-bold tracking-widest uppercase">
+          <span>Endgame Dimension Walkthrough</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight uppercase">
+          Surviving <span class="text-transparent bg-clip-text bg-gradient-to-r from-mc-sift via-purple-400 to-pink-500">The Sift</span>
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
+          The Sift is the flagship endgame dimension introduced in Minecraft Dungeons 2. Filled with alien flora, shifting gravitational rifts, and nightmarish Void Horrors, it tests the limits of your character setup.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mechanics Breakdown Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      
+      <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-xl text-purple-400">
+          🌀
+        </div>
+        <h3 class="font-mono font-bold text-white text-base">Portal Frame Activation</h3>
+        <p class="text-slate-300 text-xs font-sans leading-relaxed">
+          Find Ancient Portal Frames nestled in Deep Dark subterranean cavern biomes. To open the gateway, insert 12 <strong class="text-white">Void Infused Eyes</strong> harvested from Corrupted Warden mini-bosses across the Overworld.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-xl text-pink-400">
+          ☣️
+        </div>
+        <h3 class="font-mono font-bold text-white text-base">Void Miasma Gauge</h3>
+        <p class="text-slate-300 text-xs font-sans leading-relaxed">
+          Remaining in The Sift slowly fills your purple Void Meter. At 100%, all incoming damage is doubled and health potion healing is reduced by 75%. Cleansing pylons and Siftwalker gear reset this build-up.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl text-cyan-400">
+          ✨
+        </div>
+        <h3 class="font-mono font-bold text-white text-base">Sift-Corrupted Drops</h3>
+        <p class="text-slate-300 text-xs font-sans leading-relaxed">
+          Clearing rift events rewards a new rarity tier: <strong class="text-mc-sift">Sift-Corrupted</strong> equipment. These items roll with a permanent 4th innate enchantment slot that bypasses normal point caps.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Recommended Build Feature -->
+    <div class="space-y-6 mb-16">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-mc-sift font-bold block mb-1">Recommended Loadout</span>
+          <h2 class="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight uppercase">
+            #1 Ranked Setup for The Sift
+          </h2>
+        </div>
+      </div>
+
+      {siftBuild && <BuildCard build={siftBuild} />}
+    </div>
+
+    <!-- Sift Pro-Tips Checklist -->
+    <div class="p-8 rounded-3xl bg-mc-card/60 border border-mc-border space-y-6">
+      <h3 class="font-mono font-bold text-white text-xl uppercase tracking-wider">
+        5 Essential Survival Rules for The Sift
+      </h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
+        <div class="p-4 rounded-xl bg-mc-darkest/70 border border-mc-border flex items-start gap-3">
+          <span class="font-mono text-mc-emerald font-bold text-sm">01</span>
+          <div>
+            <strong class="text-white block mb-0.5">Equip Talisman of the Resolute Heart</strong>
+            <p class="text-slate-400 leading-relaxed">Prevents spontaneous one-shot deaths from Corrupted Stalker backstabs and buys 3 seconds to reposition.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-mc-darkest/70 border border-mc-border flex items-start gap-3">
+          <span class="font-mono text-mc-emerald font-bold text-sm">02</span>
+          <div>
+            <strong class="text-white block mb-0.5">Prioritize Void Strike Enchantment</strong>
+            <p class="text-slate-400 leading-relaxed">Corrupted mobs take exponential damage from Void Strike, cutting boss battle durations by up to 60%.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-mc-darkest/70 border border-mc-border flex items-start gap-3">
+          <span class="font-mono text-mc-emerald font-bold text-sm">03</span>
+          <div>
+            <strong class="text-white block mb-0.5">Stay Off Purple Crystallized Soil</strong>
+            <p class="text-slate-400 leading-relaxed">Walking directly over unshielded Void crystals inflicts a lingering slowing debuff that prevents roll evasions.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-mc-darkest/70 border border-mc-border flex items-start gap-3">
+          <span class="font-mono text-mc-emerald font-bold text-sm">04</span>
+          <div>
+            <strong class="text-white block mb-0.5">Destroy Rift Beacons First</strong>
+            <p class="text-slate-400 leading-relaxed">Rift Beacons continuously spawn wave after wave of void creepers. Focus these structures before fighting elite lieutenants.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Layout>

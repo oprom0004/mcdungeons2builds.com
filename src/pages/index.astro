@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BuildCard from '../components/BuildCard.astro';
+import { BUILDS_DATABASE } from '../data/builds';
+import { FAQS_LIST, faqSchema } from '../data/faqs';
+import { TIER_LIST_ITEMS } from '../data/tierList';
+
+const pageTitle = 'Minecraft Dungeons 2 Builds – Best Loadouts, Weapons & Sift Endgame Tier List (2026)';
+const pageDescription = 'Master Minecraft Dungeons 2 with our comprehensive character builds database. Explore S-tier 4-piece armor sets, Void Cleaver Sift loadouts, infinite soul caster combos, and talisman rankings.';
+
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Minecraft Dungeons II',
+  alternateName: ['Minecraft Dungeons 2', 'MCD2'],
+  url: 'https://mcdungeons2builds.com/',
+  description: pageDescription,
+  genre: ['Action RPG', 'Dungeon Crawler', 'Hack and Slash', 'Co-op Adventure'],
+  gamePlatform: ['PC', 'PlayStation 5', 'Xbox Series X/S', 'Nintendo Switch', 'Nintendo Switch 2'],
+  author: {
+    '@type': 'Organization',
+    name: 'Mojang Studios & Double Eleven',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Xbox Game Studios',
+  },
+  datePublished: '2026-09-29',
+};
+
+const featuredBuilds = BUILDS_DATABASE.filter((b) => b.featured);
+const remainingBuilds = BUILDS_DATABASE.filter((b) => !b.featured);
+const sTierItems = TIER_LIST_ITEMS.filter((i) => i.tier.includes('S'));
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={[videoGameSchema, faqSchema]}>
+  
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden border-b border-mc-border/80 pt-12 pb-20 sm:pt-20 sm:pb-28">
+    
+    <!-- Background Glow Elements -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-mc-emerald/15 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-[400px] h-[250px] bg-mc-sift/15 blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-6">
+        
+        <!-- Live Tag -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mc-emerald/10 border border-mc-emerald/30 text-mc-emerald text-xs font-mono font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-mc-emerald animate-ping"></span>
+          <span>Post-Launch Meta Database • Patch 1.0.2 Ready</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white font-mono tracking-tight leading-none uppercase">
+          Minecraft <span class="text-transparent bg-clip-text bg-gradient-to-r from-mc-emerald via-teal-300 to-mc-soul">Dungeons 2</span> Builds
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans max-w-2xl">
+          The definitive character loadout database for Mojang's 2026 sequel. Master the newly introduced <strong class="text-white">4-piece armor set synergies</strong>, conquer the treacherous <strong class="text-white">The Sift</strong> endgame dimension, and optimize your passive <strong class="text-white">Talismans</strong>.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a
+            href="/builds/"
+            class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-mc-emerald to-teal-500 text-black font-mono font-bold text-xs uppercase tracking-wider shadow-glow-emerald hover:brightness-110 transition-all flex items-center gap-2"
+          >
+            <span>⚔️ View All S-Tier Builds</span>
+          </a>
+          <a
+            href="/the-sift/"
+            class="px-6 py-3.5 rounded-xl bg-mc-card hover:bg-slate-800 border border-mc-border text-white font-mono font-bold text-xs uppercase tracking-wider hover:border-mc-sift transition-all flex items-center gap-2"
+          >
+            <span>🌌 The Sift Dimension Guide</span>
+          </a>
+          <a
+            href="/weapons-tier-list/"
+            class="px-6 py-3.5 rounded-xl bg-mc-card hover:bg-slate-800 border border-mc-border text-slate-300 hover:text-white font-mono font-bold text-xs uppercase tracking-wider hover:border-mc-gold transition-all"
+          >
+            <span>🏆 Weapons Tier List</span>
+          </a>
+        </div>
+
+        <!-- Quick Meta Counter Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-mc-border/60 text-xs font-mono">
+          <div class="p-3 rounded-xl bg-mc-card/80 border border-mc-border">
+            <span class="text-mc-muted block text-[10px] uppercase">Meta Builds</span>
+            <span class="text-white text-base font-bold">6 S/S+ Archetypes</span>
+          </div>
+          <div class="p-3 rounded-xl bg-mc-card/80 border border-mc-border">
+            <span class="text-mc-muted block text-[10px] uppercase">Armor Synergies</span>
+            <span class="text-mc-emerald text-base font-bold">4-Piece Sets</span>
+          </div>
+          <div class="p-3 rounded-xl bg-mc-card/80 border border-mc-border">
+            <span class="text-mc-muted block text-[10px] uppercase">Endgame Dimension</span>
+            <span class="text-mc-sift text-base font-bold">The Sift Ready</span>
+          </div>
+          <div class="p-3 rounded-xl bg-mc-card/80 border border-mc-border">
+            <span class="text-mc-muted block text-[10px] uppercase">Game Release</span>
+            <span class="text-mc-gold text-base font-bold">Sept 29, 2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Game Overhauls Info Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-mc-border/80">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-mc-emerald font-bold block mb-2">Game Mechanics Evolution</span>
+      <h2 class="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight uppercase">
+        What Changed in Minecraft Dungeons 2?
+      </h2>
+      <p class="text-slate-400 text-sm font-sans mt-3">
+        Understanding these 4 core foundational shifts is essential before assembling your character build:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Feature 1 -->
+      <div class="p-6 rounded-2xl bg-mc-card/70 border border-mc-border hover:border-mc-emerald/50 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-mc-emerald/10 border border-mc-emerald/30 flex items-center justify-center text-2xl mb-4">
+          🛡️
+        </div>
+        <h3 class="font-mono font-bold text-white text-base mb-2">4-Piece Armor Sets</h3>
+        <p class="text-slate-300 text-xs font-sans leading-relaxed">
+          Armor is no longer a single item. You now equip a separate <strong class="text-white">Helmet, Chestplate, Leggings, and Boots</strong>. Matching pieces triggers powerful set bonuses that redefine build stats.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="p-6 rounded-2xl bg-mc-card/70 border border-mc-border hover:border-mc-sift/50 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-mc-sift/10 border border-mc-sift/30 flex items-center justify-center text-2xl mb-4">
+          🌌
+        </div>
+        <h3 class="font-mono font-bold text-white text-base mb-2">The Sift Dimension</h3>
+        <p class="text-slate-300 text-xs font-sans leading-relaxed">
+          The brand-new endgame realm accessed via Deep Dark portal frames. Features corrupted elite mobs and hazardous Void Miasma requiring dedicated corruption ward builds.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="p-6 rounded-2xl bg-mc-card/70 border border-mc-border hover:border-mc-soul/50 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-mc-soul/10 border border-mc-soul/30 flex items-center justify-center text-2xl mb-4">
+          💎
+        </div>
+        <h3 class="font-mono font-bold text-white text-base mb-2">Passive Talismans</h3>
+        <p class="text-slate-300 text-xs font-sans leading-relaxed">
+          Two dedicated talisman slots provide game-changing passive modifiers (cheat-death mechanics, cooldown resets, elemental infuses) without stealing active artifact slots.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="p-6 rounded-2xl bg-mc-card/70 border border-mc-border hover:border-mc-gold/50 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-mc-gold/10 border border-mc-gold/30 flex items-center justify-center text-2xl mb-4">
+          🦘
+        </div>
+        <h3 class="font-mono font-bold text-white text-base mb-2">Verticality & Jump</h3>
+        <p class="text-slate-300 text-xs font-sans leading-relaxed">
+          True jumping mechanics allow players to leap over boss shockwaves, perform plunging shockwave attacks, and scale high terrain to snipe hostile hordes safely.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured S+ Tier Builds Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-mc-emerald font-bold block mb-1">Top-Rated Setups</span>
+        <h2 class="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight uppercase">
+          Featured S-Tier Meta Builds
+        </h2>
+      </div>
+      <a
+        href="/builds/"
+        class="text-xs font-mono font-bold text-mc-emerald hover:underline flex items-center gap-1"
+      >
+        <span>View all 6 builds in database</span>
+        <span>→</span>
+      </a>
+    </div>
+
+    <!-- Featured Build Cards Stack -->
+    <div class="space-y-8">
+      {featuredBuilds.map((build) => (
+        <BuildCard build={build} />
+      ))}
+    </div>
+  </section>
+
+  <!-- S-Tier Weapons Preview Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="rounded-3xl bg-gradient-to-r from-mc-card via-mc-darkest to-mc-card border border-mc-border p-8 sm:p-12 relative overflow-hidden">
+      <div class="max-w-2xl space-y-4">
+        <span class="px-2.5 py-1 rounded bg-mc-gold/20 text-mc-gold text-xs font-mono font-bold border border-mc-gold/40">
+          TIER LIST PREVIEW
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight uppercase">
+          Top Rated S+ Equipment Rankings
+        </h3>
+        <p class="text-slate-300 text-sm font-sans leading-relaxed">
+          Curious which individual Unique Greatswords, Crossbows, and Chestplates give your character the greatest advantage? Explore our full statistical breakdown.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 font-mono text-xs">
+          {sTierItems.slice(0, 4).map((item) => (
+            <div class="p-3 rounded-xl bg-mc-darkest/80 border border-mc-border flex items-center justify-between">
+              <div>
+                <strong class="text-white block text-[11px]">{item.name}</strong>
+                <span class="text-[10px] text-mc-muted">{item.type} • {item.category}</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-mc-gold/20 text-mc-gold font-bold text-[10px] border border-mc-gold/30">
+                {item.tier}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div class="pt-2">
+          <a
+            href="/weapons-tier-list/"
+            class="inline-flex items-center gap-2 text-xs font-mono font-bold text-mc-gold hover:underline"
+          >
+            <span>Read Complete Weapons & Armor Tier List (12+ Items Ranked)</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Builds Preview Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-mc-border/80">
+    <div class="mb-10">
+      <span class="text-xs font-mono uppercase tracking-widest text-mc-soul font-bold block mb-1">Playstyle Variations</span>
+      <h2 class="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight uppercase">
+        Specialist Playstyle Builds
+      </h2>
+      <p class="text-slate-400 text-sm font-sans mt-2">
+        Whether you prefer sniping from minecart tracks, running a personal army of iron golems, or tanking raid bosses in 4-player co-op:
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      {remainingBuilds.map((build) => (
+        <BuildCard build={build} />
+      ))}
+    </div>
+  </section>
+
+  <!-- FAQ Section (Schema Backed) -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-mc-border/80">
+    <div class="text-center mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-mc-emerald font-bold block mb-2">Knowledge Base</span>
+      <h2 class="text-3xl sm:text-4xl font-black font-mono text-white tracking-tight uppercase">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-slate-400 text-sm font-sans mt-2">
+        Essential gameplay and build creation queries answered by community veterans.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {FAQS_LIST.map((faq) => (
+        <details class="group rounded-2xl bg-mc-card/80 border border-mc-border p-5 transition-all open:border-mc-emerald/50">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-mono font-bold text-white text-sm sm:text-base">
+            <span>{faq.question}</span>
+            <span class="ml-4 text-mc-emerald text-xl group-open:rotate-45 transition-transform duration-200">+</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-mc-border/60 text-slate-300 text-xs sm:text-sm font-sans leading-relaxed">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+</Layout>

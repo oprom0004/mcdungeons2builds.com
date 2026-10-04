@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = 'Minecraft Dungeons 2 Talismans Guide – Best Passive Charms & Slot System (2026)';
+const pageDescription = 'Learn all about the new Talisman slot mechanic in Minecraft Dungeons 2. Discover how to unlock Talisman slots, farm Unique Charms, and maximize cheat-death and cooldown perks.';
+
+const talismansList = [
+  {
+    name: 'Talisman of the Resolute Heart',
+    rarity: 'Unique',
+    source: 'The Sift - Void Titan Chests',
+    effect: 'Cheat Death: Prevents a fatal hit once every 90 seconds, healing for 20% max HP and granting 3 seconds of invulnerability.',
+    rating: 'S+',
+    buildFit: 'Mandatory for high-difficulty Sift runs and Hardcore mode.',
+  },
+  {
+    name: 'Eldritch Soul Vessel',
+    rarity: 'Unique',
+    source: 'Deep Dark - Ancient Crypts',
+    effect: 'Increases soul capacity pool by 100 and boosts magic spell critical strike chance by +15%.',
+    rating: 'S',
+    buildFit: 'Core component for Infinite Soul Harvester & Beacon casters.',
+  },
+  {
+    name: 'Zephyr Feather Charm',
+    rarity: 'Unique',
+    source: 'Windy Peaks - High Tower Loot',
+    effect: 'Grants an extra jump charge mid-air and increases sprint velocity by 20%.',
+    rating: 'A',
+    buildFit: 'Best for open-world exploration, speedrunning, and archer kiting.',
+  },
+  {
+    name: 'Bloodstone of the Berserker',
+    rarity: 'Unique',
+    source: 'Redstone Mines - Obsidian Chests',
+    effect: 'Increases melee damage by +50% and lifesteal by 15% when below 30% maximum health.',
+    rating: 'S',
+    buildFit: 'High-risk high-reward melee berserkers and double-axe spinners.',
+  },
+  {
+    name: 'Beast Flute of the Wild',
+    rarity: 'Rare',
+    source: 'Creeper Woods - Overworld Drops',
+    effect: 'Reduces companion pet respawn cooldown timer from 30 seconds to 10 seconds.',
+    rating: 'A',
+    buildFit: 'Essential for Iron Golem and pack wolf zoo commanders.',
+  },
+  {
+    name: 'Heart of the Bastion',
+    rarity: 'Rare',
+    source: 'Desert Temple - Boss Arena',
+    effect: 'Grants a permanent +500 flat Max Health and +5 passive HP regeneration per second.',
+    rating: 'A',
+    buildFit: 'Great defensive cushion for beginner and mid-game leveling.',
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumbs -->
+    <nav class="font-mono text-xs text-mc-muted mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-mc-sift">Talismans Guide</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="max-w-3xl mb-12 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mc-sift/20 border border-mc-sift/40 text-mc-sift text-xs font-mono font-bold tracking-wider uppercase">
+        <span>Brand New MCD2 Gear Slot</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black font-mono text-white tracking-tight uppercase">
+        Talismans &amp; Passive Charms
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
+        Unlike the first game which limited customization to 3 active artifacts, Minecraft Dungeons 2 introduces <strong class="text-white">two dedicated Talisman slots</strong> that confer permanent passive passives.
+      </p>
+    </div>
+
+    <!-- How Talismans Work -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-2">
+        <span class="text-xs font-mono text-mc-emerald font-bold uppercase">Feature 01</span>
+        <h3 class="font-mono font-bold text-white text-base">Zero Active Input</h3>
+        <p class="text-xs text-slate-300 font-sans leading-relaxed">
+          Talismans trigger automatically upon meeting combat conditions (such as taking fatal damage, hitting soul thresholds, or leaping). No button presses required.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-2">
+        <span class="text-xs font-mono text-mc-sift font-bold uppercase">Feature 02</span>
+        <h3 class="font-mono font-bold text-white text-base">Unlocked at Level 10 &amp; 30</h3>
+        <p class="text-xs text-slate-300 font-sans leading-relaxed">
+          Your primary Talisman slot unlocks upon reaching character Level 10. The secondary slot unlocks at Level 30 after clearing the Nether Gate expedition.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-2">
+        <span class="text-xs font-mono text-mc-gold font-bold uppercase">Feature 03</span>
+        <h3 class="font-mono font-bold text-white text-base">Innate Roll Quality</h3>
+        <p class="text-xs text-slate-300 font-sans leading-relaxed">
+          Talismans do not consume normal enchantment points. Instead, finding higher Power Level versions directly scales their numeric percentages.
+        </p>
+      </div>
+    </div>
+
+    <!-- Talismans Catalog Grid -->
+    <div class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight uppercase">
+        Top Meta Talismans Catalog
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {talismansList.map((talisman) => (
+          <div class="p-6 rounded-2xl bg-mc-card/85 border border-mc-border hover:border-mc-sift/50 transition-all space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-mc-sift/20 text-mc-sift border border-mc-sift/40">
+                {talisman.rarity}
+              </span>
+              <span class="font-mono font-black text-mc-gold text-xs">
+                TIER {talisman.rating}
+              </span>
+            </div>
+
+            <h3 class="font-mono font-bold text-xl text-white">
+              {talisman.name}
+            </h3>
+
+            <div class="p-3 rounded-xl bg-mc-darkest/70 border border-mc-border text-xs font-mono text-slate-200">
+              <span class="text-mc-emerald font-bold block text-[10px] uppercase mb-0.5">Passive Effect</span>
+              {talisman.effect}
+            </div>
+
+            <div class="space-y-1 text-xs font-sans">
+              <div class="text-slate-400">
+                <strong class="text-mc-muted">Where to Farm:</strong> {talisman.source}
+              </div>
+              <div class="text-slate-300">
+                <strong class="text-mc-muted">Best Suited For:</strong> {talisman.buildFit}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</Layout>
