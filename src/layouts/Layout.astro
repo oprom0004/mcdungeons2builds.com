@@ -12,11 +12,11 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, 'https://mcdungeon
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { name: '🔥 Top Builds', href: '/builds/' },
-  { name: '🌌 The Sift Endgame', href: '/the-sift/' },
-  { name: '⚔️ Tier List', href: '/weapons-tier-list/' },
-  { name: '💎 Talismans Guide', href: '/talismans/' },
-  { name: '📥 Download', href: '/download/' },
+  { name: 'Top Builds', href: '/builds/' },
+  { name: 'The Sift Endgame', href: '/the-sift/' },
+  { name: 'Tier List', href: '/weapons-tier-list/' },
+  { name: 'Talismans Guide', href: '/talismans/' },
+  { name: 'Download', href: '/download/' },
 ];
 ---
 
@@ -68,8 +68,7 @@ const navLinks = [
         <!-- Logo -->
         <a href="/" class="flex items-center gap-3 group">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mc-emerald to-mc-soul flex items-center justify-center text-xl shadow-glow-emerald group-hover:scale-105 transition-transform">
-            ⚔️
-          </div>
+            </div>
           <div>
             <span class="font-mono font-black text-lg sm:text-xl tracking-tight text-white flex items-center gap-1.5">
               MCD2<span class="text-mc-emerald">BUILDS</span>
@@ -106,7 +105,7 @@ const navLinks = [
             class="px-4 py-2 rounded-lg bg-gradient-to-r from-mc-emerald to-teal-500 text-black font-mono font-bold text-xs uppercase tracking-wider shadow-glow-emerald hover:brightness-110 transition-all flex items-center gap-1.5"
           >
             <span>Explore Builds</span>
-            <span>⚡</span>
+            <span></span>
           </a>
         </div>
       </div>
@@ -124,7 +123,7 @@ const navLinks = [
           
           <div class="space-y-3 md:col-span-1">
             <div class="flex items-center gap-2">
-              <span class="text-lg">⚔️</span>
+              <span class="text-lg"></span>
               <span class="font-mono font-black text-white text-base">MCD2 Builds</span>
             </div>
             <p class="leading-relaxed">

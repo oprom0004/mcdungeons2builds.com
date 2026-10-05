@@ -55,7 +55,7 @@ const tierStyle = tierColors[build.tier] || tierColors['A'];
   <div class="py-5 space-y-3 text-sm font-sans text-slate-300 leading-relaxed">
     <p>{build.description}</p>
     <div class="p-3.5 rounded-xl bg-mc-darkest/80 border border-mc-border/80 text-xs font-mono text-slate-300">
-      <span class="text-mc-emerald font-bold uppercase tracking-wider block mb-1">⚡ Core Combat Loop</span>
+      <span class="text-mc-emerald font-bold uppercase tracking-wider block mb-1">Core Combat Loop</span>
       {build.coreLoop}
     </div>
   </div>
@@ -66,14 +66,14 @@ const tierStyle = tierColors[build.tier] || tierColors['A'];
     <!-- Weapons Column -->
     <div class="space-y-4">
       <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-mc-gold flex items-center gap-1.5">
-        <span>⚔️ Weapons &amp; Enchantments</span>
+        <span>Weapons &amp; Enchantments</span>
       </h4>
 
       <!-- Melee -->
       <div class="p-3.5 rounded-xl bg-mc-darkest/60 border border-mc-border">
         <div class="flex items-center justify-between text-xs font-mono mb-1.5">
           <span class="font-bold text-white flex items-center gap-1.5">
-            <span class="text-mc-gold">🗡️</span> {build.weapons.melee.name}
+            <span class="text-mc-gold"></span> {build.weapons.melee.name}
           </span>
           <span class="text-[10px] px-1.5 py-0.5 rounded bg-mc-gold/20 text-mc-gold border border-mc-gold/30">
             {build.weapons.melee.rarity}
@@ -93,7 +93,7 @@ const tierStyle = tierColors[build.tier] || tierColors['A'];
       <div class="p-3.5 rounded-xl bg-mc-darkest/60 border border-mc-border">
         <div class="flex items-center justify-between text-xs font-mono mb-1.5">
           <span class="font-bold text-white flex items-center gap-1.5">
-            <span class="text-mc-soul">🏹</span> {build.weapons.ranged.name}
+            <span class="text-mc-soul"></span> {build.weapons.ranged.name}
           </span>
           <span class="text-[10px] px-1.5 py-0.5 rounded bg-mc-soul/20 text-mc-soul border border-mc-soul/30">
             {build.weapons.ranged.rarity}
@@ -113,7 +113,7 @@ const tierStyle = tierColors[build.tier] || tierColors['A'];
     <!-- 4-Piece Armor Set Column -->
     <div class="space-y-4">
       <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-mc-emerald flex items-center gap-1.5">
-        <span>🛡️ 4-Piece Armor Synergy</span>
+        <span>4-Piece Armor Synergy</span>
       </h4>
 
       <div class="grid grid-cols-2 gap-2 text-xs font-mono">
@@ -141,7 +141,7 @@ const tierStyle = tierColors[build.tier] || tierColors['A'];
 
       <!-- 4-Piece Set Bonus Banner -->
       <div class="p-2.5 rounded-lg bg-mc-emerald/10 border border-mc-emerald/30 text-xs font-mono text-mc-emerald">
-        <strong class="uppercase text-[10px] tracking-wider block font-bold mb-0.5">✨ 4-Piece Set Bonus</strong>
+        <strong class="uppercase text-[10px] tracking-wider block font-bold mb-0.5">4-Piece Set Bonus</strong>
         <p class="text-[11px] text-slate-200">{build.armorSet.setBonus}</p>
       </div>
     </div>
@@ -153,7 +153,7 @@ const tierStyle = tierColors[build.tier] || tierColors['A'];
     <!-- Talismans (New MCD2 Feature) -->
     <div class="space-y-2">
       <span class="font-mono text-xs font-bold uppercase tracking-wider text-mc-sift flex items-center gap-1.5">
-        <span>💎 Equipped Talismans (Passive)</span>
+        <span>Equipped Talismans (Passive)</span>
       </span>
       <div class="space-y-1.5 text-xs font-mono">
         {build.talismans.map((talisman) => (
@@ -173,7 +173,7 @@ const tierStyle = tierColors[build.tier] || tierColors['A'];
     <!-- Artifacts -->
     <div class="space-y-2">
       <span class="font-mono text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
-        <span>🔮 Active Artifacts</span>
+        <span>Active Artifacts</span>
       </span>
       <div class="space-y-1.5 text-xs font-mono">
         {build.artifacts.map((artifact) => (
