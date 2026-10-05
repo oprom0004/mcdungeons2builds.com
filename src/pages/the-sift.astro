@@ -20,9 +20,9 @@ const siftBuild = BUILDS_DATABASE.find((b) => b.id === 'sift-void-cleaver');
     </nav>
 
     <!-- Header Banner -->
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-mc-card via-mc-darkest to-mc-dark border border-mc-sift/40 p-8 sm:p-12 mb-12 shadow-glow-sift">
-      <div class="max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mc-sift/20 border border-mc-sift/50 text-mc-sift text-xs font-mono font-bold tracking-widest uppercase">
+    <div class="relative overflow-hidden rounded-3xl bg-mc-card border border-mc-border p-8 sm:p-12 mb-12 shadow-2xl">
+      <div class="max-w-3xl space-y-4 mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-mc-dark border border-mc-border text-mc-sift text-xs font-mono font-bold tracking-widest uppercase">
           <span>Endgame Dimension Walkthrough</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-mono text-white tracking-tight uppercase">
@@ -32,14 +32,25 @@ const siftBuild = BUILDS_DATABASE.find((b) => b.id === 'sift-void-cleaver');
           The Sift is the flagship endgame dimension introduced in Minecraft Dungeons 2. Filled with alien flora, shifting gravitational rifts, and nightmarish Void Horrors, it tests the limits of your character setup.
         </p>
       </div>
+
+      <!-- Dimension Cinematic Visual -->
+      <div class="rounded-2xl overflow-hidden border border-mc-border shadow-2xl">
+        <img
+          src="/images/the-sift.jpg"
+          alt="Minecraft Dungeons 2 The Sift Dimension floating crystal islands and portal"
+          class="w-full h-auto object-cover"
+          width="1280"
+          height="720"
+        />
+      </div>
     </div>
 
     <!-- Mechanics Breakdown Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
       
       <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-xl text-purple-400">
-          🌀
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-xs font-mono font-bold text-purple-300">
+          GATE
         </div>
         <h3 class="font-mono font-bold text-white text-base">Portal Frame Activation</h3>
         <p class="text-slate-300 text-xs font-sans leading-relaxed">
@@ -48,8 +59,8 @@ const siftBuild = BUILDS_DATABASE.find((b) => b.id === 'sift-void-cleaver');
       </div>
 
       <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-xl text-pink-400">
-          ☣️
+        <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-xs font-mono font-bold text-pink-300">
+          VOID
         </div>
         <h3 class="font-mono font-bold text-white text-base">Void Miasma Gauge</h3>
         <p class="text-slate-300 text-xs font-sans leading-relaxed">
@@ -58,8 +69,9 @@ const siftBuild = BUILDS_DATABASE.find((b) => b.id === 'sift-void-cleaver');
       </div>
 
       <div class="p-6 rounded-2xl bg-mc-card/80 border border-mc-border space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl text-cyan-400">
-          </div>
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xs font-mono font-bold text-cyan-300">
+          DROP
+        </div>
         <h3 class="font-mono font-bold text-white text-base">Sift-Corrupted Drops</h3>
         <p class="text-slate-300 text-xs font-sans leading-relaxed">
           Clearing rift events rewards a new rarity tier: <strong class="text-mc-sift">Sift-Corrupted</strong> equipment. These items roll with a permanent 4th innate enchantment slot that bypasses normal point caps.

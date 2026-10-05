@@ -105,8 +105,19 @@ const sTierItems = TIER_LIST_ITEMS.filter((i) => i.tier.includes('S'));
           </div>
           <div class="p-3 rounded-xl bg-mc-card/80 border border-mc-border">
             <span class="text-mc-muted block text-[10px] uppercase">Game Release</span>
-            <span class="text-mc-gold text-base font-bold">Sept 29, 2026</span>
+            <span class="text-mc-gold text-base font-bold">Official Sequel</span>
           </div>
+        </div>
+
+        <!-- Hero Cinematic Visual -->
+        <div class="rounded-2xl overflow-hidden border border-mc-border shadow-2xl mt-8">
+          <img
+            src="/images/hero.jpg"
+            alt="Minecraft Dungeons 2 Heroes battling Obsidian Golems and Endermen"
+            class="w-full h-auto object-cover"
+            width="1280"
+            height="720"
+          />
         </div>
 
       </div>
@@ -159,10 +170,10 @@ const sTierItems = TIER_LIST_ITEMS.filter((i) => i.tier.includes('S'));
 
       <!-- Feature 4 -->
       <div class="p-6 rounded-2xl bg-mc-card/70 border border-mc-border hover:border-mc-gold/50 transition-all">
-        <div class="w-12 h-12 rounded-xl bg-mc-gold/10 border border-mc-gold/30 flex items-center justify-center text-2xl mb-4">
-          🦘
+        <div class="w-12 h-12 rounded-xl bg-mc-gold/10 border border-mc-gold/30 flex items-center justify-center text-sm font-mono font-bold text-mc-gold mb-4">
+          JUMP
         </div>
-        <h3 class="font-mono font-bold text-white text-base mb-2">Verticality & Jump</h3>
+        <h3 class="font-mono font-bold text-white text-base mb-2">Verticality &amp; Jump</h3>
         <p class="text-slate-300 text-xs font-sans leading-relaxed">
           True jumping mechanics allow players to leap over boss shockwaves, perform plunging shockwave attacks, and scale high terrain to snipe hostile hordes safely.
         </p>
@@ -199,8 +210,8 @@ const sTierItems = TIER_LIST_ITEMS.filter((i) => i.tier.includes('S'));
 
   <!-- S-Tier Weapons Preview Banner -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="rounded-3xl bg-gradient-to-r from-mc-card via-mc-darkest to-mc-card border border-mc-border p-8 sm:p-12 relative overflow-hidden">
-      <div class="max-w-2xl space-y-4">
+    <div class="rounded-3xl bg-mc-card border border-mc-border p-8 sm:p-12 relative overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center shadow-xl">
+      <div class="space-y-4">
         <span class="px-2.5 py-1 rounded bg-mc-gold/20 text-mc-gold text-xs font-mono font-bold border border-mc-gold/40">
           TIER LIST PREVIEW
         </span>
@@ -228,10 +239,20 @@ const sTierItems = TIER_LIST_ITEMS.filter((i) => i.tier.includes('S'));
             href="/weapons-tier-list/"
             class="inline-flex items-center gap-2 text-xs font-mono font-bold text-mc-gold hover:underline"
           >
-            <span>Read Complete Weapons & Armor Tier List (12+ Items Ranked)</span>
+            <span>Read Complete Weapons &amp; Armor Tier List (12+ Items Ranked)</span>
             <span>→</span>
           </a>
         </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-mc-border shadow-2xl">
+        <img
+          src="/images/weapons-arsenal.jpg"
+          alt="Minecraft Dungeons 2 Weapons Arsenal Display"
+          class="w-full h-auto object-cover"
+          width="800"
+          height="450"
+        />
       </div>
     </div>
   </section>
