@@ -2,15 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import { TIER_LIST_ITEMS } from '../data/tierList';
 
-const pageTitle = 'Minecraft Dungeons 2 Weapons Tier List – Best Melee, Ranged & Armor Ranked (2026)';
+const pageTitle = 'Minecraft Dungeons 2 Weapons Tier List – Best Melee, Ranged & Armor Ranked';
 const pageDescription = 'Check out the official community Tier List for Minecraft Dungeons 2 equipment. See rankings from S+ to B tier for Unique Greatswords, Bows, 4-piece armor sets, and Talismans.';
 
 const tiers = ['S+', 'S', 'A'];
 
 const tierColors: Record<string, string> = {
-  'S+': 'text-purple-400 border-purple-500/40 bg-purple-500/10 shadow-glow-sift',
-  'S': 'text-amber-400 border-amber-500/40 bg-amber-500/10 shadow-glow-gold',
-  'A': 'text-cyan-400 border-cyan-500/40 bg-cyan-500/10 shadow-glow-soul',
+  'S+': 'text-purple-300 border-purple-500/30 bg-purple-500/10',
+  'S': 'text-amber-300 border-amber-500/30 bg-amber-500/10',
+  'A': 'text-cyan-300 border-cyan-500/30 bg-cyan-500/10',
 };
 ---
 
@@ -26,8 +26,8 @@ const tierColors: Record<string, string> = {
 
     <!-- Header -->
     <div class="max-w-3xl mb-12 space-y-3">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mc-gold/10 border border-mc-gold/40 text-mc-gold text-xs font-mono font-bold tracking-wider uppercase">
-        <span>Patch 1.0.2 Meta Ranking</span>
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-mc-card border border-mc-border text-slate-300 text-xs font-mono uppercase tracking-wider">
+        <span>Endgame Meta Rankings</span>
       </div>
       <h1 class="text-3xl sm:text-5xl font-black font-mono text-white tracking-tight uppercase">
         Weapons &amp; Gear Tier List
